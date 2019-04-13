@@ -9,7 +9,8 @@
     <!-- Mybatis文件   /**/*.xml 匹配任意多级目录下的xml文件 -->
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="dataSource" ref="dataSource"/>
-        <!--<property name="mapperLocations" value="classpath:sqlmap"/>-->
+        <property name="configLocation" value="classpath:spring/spring-config-datasource.xml"/>
+        <property name="mapperLocations" value="classpath:sqlmap/**/*.xml"/>
         <property name="typeAliasesPackage" value="com.jcs.ssm.domain"/>
     </bean>
 
