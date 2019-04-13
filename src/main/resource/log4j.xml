@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE log4j:configuration PUBLIC
+  "-//APACHE//DTD LOG4J 1.2//EN" "http://logging.apache.org/log4j/1.2/apidocs/org/apache/log4j/xml/doc-files/log4j.dtd">
+  <log4j:configuration>
+    <appender name="CONSOLE" class="org.apache.log4j.ConsoleAppender">
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d{yyyy-MM-dd HH:mm:ss:SSS} [%-5p] [%r] [%t] %c - %m%n"/>
+        </layout>
+        <filter class="org.apache.log4j.varia.LevelRangeFilter">
+            <param name="LevelMin" value="${com.jcs.log.level}"/>
+        </filter>
+    </appender>
+
+    <logger name="org.apache.ibatis.logging.jdbc.BaseJdbcLogger">
+        <level value="${com.jcs.log.level}"/>
+        <appender-ref ref="CONSOLE"/>
+    </logger>
+
+    <logger name="org.apache.ibatis">
+        <level value="debug"/>
+        <appender-ref ref="CONSOLE"/>
+    </logger>
+
+    <logger name="org.apache.mybatis">
+        <level value="debug"/>
+        <appender-ref ref="CONSOLE"/>
+    </logger>
+
+    <root>
+        <priority value="${com.jcs.log.level}"/>
+        <appender-ref ref="CONSOLE"/>
+    </root>
+
+</log4j:configuration>
