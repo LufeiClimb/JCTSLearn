@@ -9,7 +9,8 @@
   <version>1.0-SNAPSHOT</version>
   <packaging>war</packaging>
 
-  <name>JCS-Learn Maven Webapp</name>
+  <name>JCSLearn</name>
+  <description>To learn Java Core Technology Stack</description>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
